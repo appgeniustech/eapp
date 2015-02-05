@@ -1,0 +1,58 @@
+.popup > .panel {
+      padding-top: 10px;
+    }
+
+ul.list {
+    margin-top: 0;
+}
+
+section {
+    padding-top: 0 !important;
+}
+
+/* Fix for Native Browser on Android, ugh! */
+body.isNativeAndroidBrowser .sheet > section > ul > li > button.action {
+    width: 100% !important;
+}
+
+a.menu-button {
+  position: relative;
+  z-index: 1111111;
+    margin-bottom: 3px;
+  width: 35px;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin-left: 0;
+}
+a.menu-button::before {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20style%3D%22pointer-events%3A%20none%3B%20display%3A%20block%3B%22%3E%3Cg%20id%3D%22menu%22%3E%3Cpath%20d%3D%22M3%2C18h18v-2H3V18z%20M3%2C13h18v-2H3V13z%20M3%2C6v2h18V6H3z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-position: 50% 50%;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+}
+
+a.smenu-button {
+  position: relative;
+  z-index: 1111111;
+    margin-bottom: 3px;
+  width: 35px;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin-right: 0;
+}
+a.smenu-button::before {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20style%3D%22pointer-events%3A%20none%3B%20display%3A%20block%3B%22%3E%3Cg%20id%3D%22more-vert%22%3E%3Cpath%20d%3D%22M12%2C8c1.1%2C0%2C2-0.9%2C2-2s-0.9-2-2-2c-1.1%2C0-2%2C0.9-2%2C2S10.9%2C8%2C12%2C8z%20M12%2C10c-1.1%2C0-2%2C0.9-2%2C2s0.9%2C2%2C2%2C2c1.1%2C0%2C2-0.9%2C2-2S13.1%2C10%2C12%2C10z%20M12%2C16c-1.1%2C0-2%2C0.9-2%2C2s0.9%2C2%2C2%2C2c1.1%2C0%2C2-0.9%2C2-2S13.1%2C16%2C12%2C16z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-position: 50% 50%;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<html>
+<!--#region Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>Enchant</title>
+
+    <link rel="stylesheet" href="css/chui-android-3.8.2.css">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<!--#endregion-->
+
+<body>
+
+<!--#region Me View -->
+<nav class="current">
+    <a class='menu-button'></a>
+    <h1>Me</h1>
+    <a id="meSMenu" class='smenu-button'></a>
+</nav>
+<article id="meview" class="current">
+    <section>
+        <ul class='list' role="list">
+            <li class='comp'>
+                <aside>
+                    <img id="meImage" title='Me' width="80px" height="80px" src="data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2218.889px%22%20height%3D%2223.316px%22%20viewBox%3D%220%200%2018.889%2023.316%22%20enable-background%3D%22new%200%200%2018.889%2023.316%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Ccircle%20style%3D%22fill%3A%23002FFF%3B%22%20cx%3D%226.408%22%20cy%3D%224.729%22%20r%3D%224.729%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M13.29%2C12.121c-0.614%2C0-1.203%2C0.104-1.757%2C0.287c-1.169-1.499-3.026-2.472-5.125-2.472C2.868%2C9.937%2C0%2C12.693%2C0%2C16.097v3.421%0A%09h7.994c0.752%2C2.206%2C2.84%2C3.8%2C5.296%2C3.8c3.088%2C0%2C5.599-2.512%2C5.599-5.599S16.378%2C12.121%2C13.29%2C12.121z%20M8.926%2C17.719%0A%09c0-2.406%2C1.958-4.365%2C4.364-4.365c2.408%2C0%2C4.366%2C1.959%2C4.366%2C4.365c0%2C2.407-1.958%2C4.365-4.366%2C4.365%0A%09C10.884%2C22.084%2C8.926%2C20.126%2C8.926%2C17.719z%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M14.069%2C14.509h-1.39c-0.001%2C0.666%2C0%2C2.418%2C0%2C2.418s-1.508%2C0-2.254%2C0.002v1.389c0.746-0.001%2C2.254-0.001%2C2.254-0.001%0A%09s0%2C1.75-0.001%2C2.419h1.39c0.001-0.669%2C0.001-2.419%2C0.001-2.419s1.507%2C0%2C2.253%2C0v-1.39c-0.746%2C0-2.253%2C0-2.253%2C0%0A%09S14.068%2C15.175%2C14.069%2C14.509z%22%2F%3E%0A%3C%2Fsvg%3E">
+                </aside>
+                <div>
+                    <h3 id="meName">Me</h3>
+                    <h4 id="meAge"></h4>
+                    <h4 id="meGender"></h4>
+                </div>
+
+            </li>
+            <li>
+                <p id="meDesc"></p>
+            </li>
+        </ul>
+    </section>
+
+</article>
+<!--#endregion-->
+
+<!--#region Register Friend -->
+<nav class='next'>
+    <button class='back'></button>
+    <h1 id="registerFriendHeader">Register Friend</h1>
+</nav>
+<article id="registerfriend" class='next'>
+    <section>
+        <ul class='list' ui-implements='form'>
+            <li class='comp'>
+                <aside>
+                    <img id="friendImage" title='Me' width="80px" height="80px" src="data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2218.889px%22%20height%3D%2223.316px%22%20viewBox%3D%220%200%2018.889%2023.316%22%20enable-background%3D%22new%200%200%2018.889%2023.316%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Ccircle%20style%3D%22fill%3A%23002FFF%3B%22%20cx%3D%226.408%22%20cy%3D%224.729%22%20r%3D%224.729%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M13.29%2C12.121c-0.614%2C0-1.203%2C0.104-1.757%2C0.287c-1.169-1.499-3.026-2.472-5.125-2.472C2.868%2C9.937%2C0%2C12.693%2C0%2C16.097v3.421%0A%09h7.994c0.752%2C2.206%2C2.84%2C3.8%2C5.296%2C3.8c3.088%2C0%2C5.599-2.512%2C5.599-5.599S16.378%2C12.121%2C13.29%2C12.121z%20M8.926%2C17.719%0A%09c0-2.406%2C1.958-4.365%2C4.364-4.365c2.408%2C0%2C4.366%2C1.959%2C4.366%2C4.365c0%2C2.407-1.958%2C4.365-4.366%2C4.365%0A%09C10.884%2C22.084%2C8.926%2C20.126%2C8.926%2C17.719z%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M14.069%2C14.509h-1.39c-0.001%2C0.666%2C0%2C2.418%2C0%2C2.418s-1.508%2C0-2.254%2C0.002v1.389c0.746-0.001%2C2.254-0.001%2C2.254-0.001%0A%09s0%2C1.75-0.001%2C2.419h1.39c0.001-0.669%2C0.001-2.419%2C0.001-2.419s1.507%2C0%2C2.253%2C0v-1.39c-0.746%2C0-2.253%2C0-2.253%2C0%0A%09S14.068%2C15.175%2C14.069%2C14.509z%22%2F%3E%0A%3C%2Fsvg%3E"/>
+                </aside>
+                <div>
+                    <input autocorrect="off" autocapitalize="words" type="text" id="friendName" placeholder="Name" required>
+                    <input style="margin-top: 5px" autocorrect="off" autocapitalize="off" type="text" id="friendAge" placeholder="Age" required>
+                    <input style="margin-top: 5px" autocorrect="off" autocapitalize="words" type="text" id="friendCity" placeholder="City" required>
+                </div>
+            </li>
+            <li>
+                <input autocorrect="off" autocapitalize="off" type="email" id="friendEmail" placeholder="Email Address" required>
+            </li>
+            <li >
+                <input autocorrect="off" autocapitalize="words" type="text" id="friendLikes" placeholder="Likes: Sports, Swimming.." required>
+            </li>
+            <li>
+                <textarea autocorrect="on" rows="5" cols="40" autocapitalize="words" type="text" id="friendDescription" placeholder="Description - Sell it!" required></textarea>
+            </li>
+        </ul>
+        <ul class='list' id="agreeToTermsUl" style="display: none" ui-implements='form'>
+            <li>
+                <p>"Here are all the legal requirements that would put a normal person to sleep but which we expect you to have to suffer through reading if you want to proceed.</p>
+            </li>
+            <li class='comp'>
+                <div>
+                    <label id='agreeToTermsLabel' for='agreeToTerms'>I agree to these terms.</label>
+                </div>
+                <aside>
+                    <span class='switch traditional off'><input id="agreeToTerms" type="checkbox"></span>
+                </aside>
+            </li>
+        </ul>
+        <button class='action' style="display: none" id="submitRegistration">Register Friend</button>
+        <button class='action' style="display: none" id="saveFriendEdit">Save</button>
+    </section>
+</article>
+<!--#endregion-->
+
+<!--#region Edit Me-->
+<nav class='next'>
+    <button class='back'>Me</button>
+    <h1>Edit</h1>
+</nav>
+<article id="editmeview" class='next'>
+    <section>
+        <ul class='list' ui-implements='form'>
+            <li class='comp'>
+                <aside>
+                    <img id="editmeImage" title='Me' width="80px" height="80px" src="data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2218.889px%22%20height%3D%2223.316px%22%20viewBox%3D%220%200%2018.889%2023.316%22%20enable-background%3D%22new%200%200%2018.889%2023.316%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Ccircle%20style%3D%22fill%3A%23002FFF%3B%22%20cx%3D%226.408%22%20cy%3D%224.729%22%20r%3D%224.729%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M13.29%2C12.121c-0.614%2C0-1.203%2C0.104-1.757%2C0.287c-1.169-1.499-3.026-2.472-5.125-2.472C2.868%2C9.937%2C0%2C12.693%2C0%2C16.097v3.421%0A%09h7.994c0.752%2C2.206%2C2.84%2C3.8%2C5.296%2C3.8c3.088%2C0%2C5.599-2.512%2C5.599-5.599S16.378%2C12.121%2C13.29%2C12.121z%20M8.926%2C17.719%0A%09c0-2.406%2C1.958-4.365%2C4.364-4.365c2.408%2C0%2C4.366%2C1.959%2C4.366%2C4.365c0%2C2.407-1.958%2C4.365-4.366%2C4.365%0A%09C10.884%2C22.084%2C8.926%2C20.126%2C8.926%2C17.719z%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M14.069%2C14.509h-1.39c-0.001%2C0.666%2C0%2C2.418%2C0%2C2.418s-1.508%2C0-2.254%2C0.002v1.389c0.746-0.001%2C2.254-0.001%2C2.254-0.001%0A%09s0%2C1.75-0.001%2C2.419h1.39c0.001-0.669%2C0.001-2.419%2C0.001-2.419s1.507%2C0%2C2.253%2C0v-1.39c-0.746%2C0-2.253%2C0-2.253%2C0%0A%09S14.068%2C15.175%2C14.069%2C14.509z%22%2F%3E%0A%3C%2Fsvg%3E" />
+                </aside>
+                <div>
+                    <input autocorrect="off" autocapitalize="words" type="text" id="editmeName" placeholder="Name" required>
+                    <input style="margin-top: 5px" autocorrect="off" autocapitalize="off" type="text" id="editmeAge" placeholder="Age" required>
+                    <input style="margin-top: 5px" autocorrect="off" autocapitalize="words" type="text" id="editmeCity" placeholder="City" required>
+                </div>
+            </li>
+            <li>
+                <input autocorrect="off" autocapitalize="off" type="email" id="editmeEmail" placeholder="Email Address" required>
+            </li>
+           <li>
+               <textarea autocorrect="on" rows="5" cols="40" autocapitalize="words" type="text" id="editmeDescription" placeholder="Description - Sell it!" required></textarea>
+            </li>
+        </ul>
+        <button class='action' id="editmeSave">Save</button>
+    </section>
+</article>
+<!--#endregion-->
+
+<!--#region View Profile -->
+<nav class='next'>
+    <button class='back'></button>
+    <h1 id="profileNameHeader">Profile</h1>
+    <a id="profileSMenu" class='smenu-button'></a>
+</nav>
+<article id="viewprofile" class='next'>
+    <section>
+        <ul class='list' role="list">
+            <li class='comp'>
+                <aside>
+                    <img id="profileImage" width="80px" height="80px" src="data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2218.889px%22%20height%3D%2223.316px%22%20viewBox%3D%220%200%2018.889%2023.316%22%20enable-background%3D%22new%200%200%2018.889%2023.316%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Ccircle%20style%3D%22fill%3A%23002FFF%3B%22%20cx%3D%226.408%22%20cy%3D%224.729%22%20r%3D%224.729%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M13.29%2C12.121c-0.614%2C0-1.203%2C0.104-1.757%2C0.287c-1.169-1.499-3.026-2.472-5.125-2.472C2.868%2C9.937%2C0%2C12.693%2C0%2C16.097v3.421%0A%09h7.994c0.752%2C2.206%2C2.84%2C3.8%2C5.296%2C3.8c3.088%2C0%2C5.599-2.512%2C5.599-5.599S16.378%2C12.121%2C13.29%2C12.121z%20M8.926%2C17.719%0A%09c0-2.406%2C1.958-4.365%2C4.364-4.365c2.408%2C0%2C4.366%2C1.959%2C4.366%2C4.365c0%2C2.407-1.958%2C4.365-4.366%2C4.365%0A%09C10.884%2C22.084%2C8.926%2C20.126%2C8.926%2C17.719z%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M14.069%2C14.509h-1.39c-0.001%2C0.666%2C0%2C2.418%2C0%2C2.418s-1.508%2C0-2.254%2C0.002v1.389c0.746-0.001%2C2.254-0.001%2C2.254-0.001%0A%09s0%2C1.75-0.001%2C2.419h1.39c0.001-0.669%2C0.001-2.419%2C0.001-2.419s1.507%2C0%2C2.253%2C0v-1.39c-0.746%2C0-2.253%2C0-2.253%2C0%0A%09S14.068%2C15.175%2C14.069%2C14.509z%22%2F%3E%0A%3C%2Fsvg%3E">
+                </aside>
+                <div>
+                    <h3 id="profileName"></h3>
+                    <h4 id="profileAge"></h4>
+                    <h4 style="margin-top: 5px" id="profileCity"></h4>
+                    <button class="action" style="display: none" id="profileLike">Like!</button>
+                </div>
+            </li>
+            <li>
+                <p id="profileLikes">Likes</p>
+            </li>
+            <li>
+                <p id="profileDescription">Description</p>
+            </li>
+            <li style="display: none">
+                <h4 id="profileEmail">Email</h4>
+            </li>
+        </ul>
+        <h1 id="registeredByLabel" style="text-align: center">Registered By</h1>
+        <ul class='list' role="list">
+            <li class='comp'>
+                <div style="text-align: right; margin-right: 10px">
+                    <h3 id="profileMeName">Me</h3>
+                    <h4 id="profileMeAge">21</h4>
+                    <h4 id="profileMeGender">Female</h4>
+                </div>
+                <aside>
+                    <img id="profileMeImage" width="80px" height="80px" src="data:image/svg+xml;utf8,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2218.889px%22%20height%3D%2223.316px%22%20viewBox%3D%220%200%2018.889%2023.316%22%20enable-background%3D%22new%200%200%2018.889%2023.316%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Ccircle%20style%3D%22fill%3A%23002FFF%3B%22%20cx%3D%226.408%22%20cy%3D%224.729%22%20r%3D%224.729%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M13.29%2C12.121c-0.614%2C0-1.203%2C0.104-1.757%2C0.287c-1.169-1.499-3.026-2.472-5.125-2.472C2.868%2C9.937%2C0%2C12.693%2C0%2C16.097v3.421%0A%09h7.994c0.752%2C2.206%2C2.84%2C3.8%2C5.296%2C3.8c3.088%2C0%2C5.599-2.512%2C5.599-5.599S16.378%2C12.121%2C13.29%2C12.121z%20M8.926%2C17.719%0A%09c0-2.406%2C1.958-4.365%2C4.364-4.365c2.408%2C0%2C4.366%2C1.959%2C4.366%2C4.365c0%2C2.407-1.958%2C4.365-4.366%2C4.365%0A%09C10.884%2C22.084%2C8.926%2C20.126%2C8.926%2C17.719z%22%2F%3E%0A%3Cpath%20style%3D%22fill%3A%23002FFF%3B%22%20d%3D%22M14.069%2C14.509h-1.39c-0.001%2C0.666%2C0%2C2.418%2C0%2C2.418s-1.508%2C0-2.254%2C0.002v1.389c0.746-0.001%2C2.254-0.001%2C2.254-0.001%0A%09s0%2C1.75-0.001%2C2.419h1.39c0.001-0.669%2C0.001-2.419%2C0.001-2.419s1.507%2C0%2C2.253%2C0v-1.39c-0.746%2C0-2.253%2C0-2.253%2C0%0A%09S14.068%2C15.175%2C14.069%2C14.509z%22%2F%3E%0A%3C%2Fsvg%3E">
+                </aside>
+
+            </li>
+            <li>
+                <p id="profileMeDescription"></p>
+            </li>
+        </ul>
+    </section>
+</article>
+<!--#endregion-->
+
+<!--#region Picture -->
+    <nav class='next'>
+        <button class='back'></button>
+        <h1 id="pictureviewHeader">Picture</h1>
+    </nav>
+    <article id='pictureview'>
+        <section>
+            <img id="pictureviewPicture" />
+        </section>
+    </article>
+<!--#endregion-->
+
+<!--#region Profile List -->
+
+    <nav class='next'>
+        <button class='back'></button>
+        <h1 id="profilelistheader">Friends</h1>
+        <a id="profilelistSMenu" class='smenu-button'></a>
+    </nav>
+    <article id='profilelist'>
+        <section>
+            <ul id="profilescontainer" class='list'>
+               
+            </ul>
+        </section>
+    </article>
+
+<!--#endregion-->
+
+<!--#region Logs -->
+    <nav class='next'>
+        <button class='back'></button>
+        <h1>Logs</h1>
+     </nav>
+    <article id='logs'>
+        <section>
+            <ul id="logscontainer" class='list'></ul>
+        </section>
+    </article>
+<!--#endregion-->
+
+<!--#region Slide Out & Sheet -->
+    <div class="slide-out">
+        <section>
+            <ul class="list">
+                <li id="menuEdit">
+                    <h3>Edit</h3>
+                </li>
+                <li id="menuRegisterFriend">
+                    <h3>Register Friend</h3>
+                </li>
+                <li id="menuViewFriends">
+                    <h3>View Friends</h3>
+                </li>
+                <li id="menuDeviceInfo">
+                    <h3>Device Info</h3>
+                </li>
+                <li id="menuUseDev">
+                    <h3>Use Dev URL</h3>
+                </li>
+                <li id="menuLogs">
+                    <h3>View Logs</h3>
+                </li>
+                <li id="menuExit">
+                    <h3>Exit</h3>
+                </li>
+            </ul>
+        </section>
+    </div>
+<!--#endregion-->
+
+<!--#region Templates -->
+<script id='sheetTemplate' type='text/x-template'>
+    <ul class='list'>
+        <li id="smenuEdit"><button class='action' href='javascript:void(null)'>Edit</button></li>
+        <li style="display:none" id="smenuDelete"><button class='action' href='javascript:void(null)'>Delete</button></li>
+        <li style="display:none" id="smenuRefresh"><button class='action' href='javascript:void(null)'>Refresh</button></li>
+        <li style="display:none" id="smenuRegisterFriend"><button class='action' href='javascript:void(null)'>Register Friend</button></li>
+    </ul>
+</script>
+<script id='profileTemplate' type='text/x-template'>
+    <li class='comp' data-goto="viewprofile" id="[[= data._id]]">
+        <aside>
+            <img title='[[= data.name]]' src="[[= data.picture]]" height="80px">
+        </aside>
+        <div>
+            <h3>[[= data.name]]</h3>
+            <h4>[[= data.location]]</h4>
+            <h4>Age: [[= data.age]]</h4>
+        </div>
+        <aside>
+            <span class='show-detail'></span>
+        </aside>
+    </li>
+
+</script>
+    <script id='logsTemplate' type='text/x-template'>
+        <li>
+            <div>
+                <h3>[[= data.msg]]</h3>
+                <p>[[= data.props]]</p>
+            </div>
+        </li>
+
+    </script>  
+<!--#endregion-->
+
+<!--#region Scripts -->
+<!-- Cordova reference, this is added to your app when it's built. -->
+<script src="cordova.js"></script>
+<!--<script src="scripts/platformOverrides.js"></script>-->
+<script data-main="js/main" src="js/require.js"></script>
+<!--#endregion-->
+</body>
+</html>
